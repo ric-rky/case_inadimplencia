@@ -1,4 +1,4 @@
-# Case Técnico: Previsão de Inadimplência (Datarisk)
+# Case Técnico: Previsão de Inadimplência
 
 Solução desenvolvida para o case técnico de Cientista de Dados Júnior, com foco em estimar a probabilidade de inadimplência por cobrança, integrando dados cadastrais, mensais e históricos de pagamentos.
 
@@ -17,12 +17,10 @@ Construir um modelo de classificação binária para prever o risco de atraso ig
 
 ## Estrutura do Projeto
 
-* `case_datarisk_notebook.ipynb`: Análise exploratória (EDA), pré-processamento e modelagem.
+* `case_inadimplencia`: Análise exploratória (EDA), pré-processamento e modelagem.
 * `submissao_case.csv`: Arquivo final com as predições geradas.
 * `requirements.txt`: Dependências para reprodução do ambiente.
 * `README.md`: Documentação técnica.
-
-**Observação**: Os dados originais não estão versionados neste repositório. Para execução, deve-se criar um diretório `data/` e inserir os arquivos .csv fornecidos no case.
 
 ---
 
