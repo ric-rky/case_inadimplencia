@@ -1,4 +1,4 @@
-# Case Técnico: Previsão de Inadimplência
+# Case Técnico: Previsão de Inadimplência (Datarisk)
 
 Solução desenvolvida para o case técnico de Cientista de Dados Júnior, com foco em estimar a probabilidade de inadimplência por cobrança, integrando dados cadastrais, mensais e históricos de pagamentos.
 
@@ -8,10 +8,10 @@ Solução desenvolvida para o case técnico de Cientista de Dados Júnior, com f
 
 Construir um modelo de classificação binária para prever o risco de atraso igual ou superior a 5 dias.
 
-* **Variável Alvo (Target):**
+* **Variável Alvo (Target)**:
     * 1 (Inadimplente): se DIAS_ATRASO >= 5
     * 0 (Adimplente): caso contrário
-* **Entregável:** Arquivo .csv contendo as probabilidades previstas para o conjunto de teste.
+* **Entregável**: Arquivo .csv contendo as probabilidades previstas para o conjunto de teste.
 
 ---
 
@@ -22,7 +22,7 @@ Construir um modelo de classificação binária para prever o risco de atraso ig
 * `requirements.txt`: Dependências para reprodução do ambiente.
 * `README.md`: Documentação técnica.
 
-**Observação:** Os dados originais não estão versionados neste repositório. Para execução, deve-se criar um diretório `data/` e inserir os arquivos .csv fornecidos no case.
+**Observação**: Os dados originais não estão versionados neste repositório. Para execução, deve-se criar um diretório `data/` e inserir os arquivos .csv fornecidos no case.
 
 ---
 
@@ -33,18 +33,19 @@ Construir um modelo de classificação binária para prever o risco de atraso ig
 * A tabela de pagamentos foi definida como a tabela fato, preservando a granularidade correta por transação de cobrança.
 
 ### Tratamento e Preparação (Data Prep)
-* **Valores Ausentes:** * Variáveis numéricas: Imputação pela mediana para mitigar o impacto de outliers.
+* **Valores Ausentes**:
+    * Variáveis numéricas: Imputação pela mediana para mitigar o impacto de outliers.
     * Variáveis categóricas: Preenchimento com o rótulo "NA".
-* **Seleção de Atributos:** Exclusão da variável FLAG_PF devido à baixa variância.
-* **Feature Engineering:** Criação de novas variáveis para aumentar o poder preditivo:
+* **Seleção de Atributos**: Exclusão da variável FLAG_PF devido à baixa variância.
+* **Feature Engineering**: Criação de novas variáveis para aumentar o poder preditivo:
     * `PRAZO_EMISSAO_VENC`: Intervalo em dias entre a data de emissão e o vencimento.
     * `SAFRA_ANO` / `SAFRA_MES`: Decomposição temporal para captura de sazonalidade.
     * `TAXA_RELATIVA`: Razão entre taxas aplicadas e valores contratuais.
 
 ### Pipeline de Modelagem
 Implementação via `ColumnTransformer` para automação dos processos:
-1.  `StandardScaler`: Normalização de variáveis numéricas.
-2.  `OneHotEncoder`: Codificação de variáveis categóricas com tratamento de categorias desconhecidas (`handle_unknown="ignore"`).
+1. `StandardScaler`: Normalização de variáveis numéricas.
+2. `OneHotEncoder`: Codificação de variáveis categóricas com tratamento de categorias desconhecidas (`handle_unknown="ignore"`).
 
 ---
 
@@ -65,13 +66,13 @@ O algoritmo Random Forest foi selecionado como o modelo final devido à superior
 
 ## Instruções de Execução
 
-1.  Clonar o repositório.
-2.  Alocar os arquivos brutos no diretório `data/`.
-3.  Instalar as dependências do projeto:
+1. Clonar o repositório.
+2. Alocar os arquivos brutos no diretório `data/`.
+3. Instalar as dependências do projeto:
     ```bash
     pip install -r requirements.txt
     ```
-4.  Executar o notebook `case_datarisk_notebook.ipynb` para processamento completo e geração do arquivo de submissão.
+4. Executar o notebook `case_datarisk_notebook.ipynb` para processamento completo e geração do arquivo de submissão.
 
 ---
 
