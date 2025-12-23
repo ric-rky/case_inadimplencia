@@ -1,4 +1,4 @@
-# Case Técnico: Previsão de Inadimplência (Datarisk)
+# Case Técnico: Previsão de Inadimplência
 
 Solução desenvolvida para o case técnico de Cientista de Dados Júnior, com foco em estimar a probabilidade de inadimplência por cobrança, integrando dados cadastrais, mensais e históricos de pagamentos.
 
