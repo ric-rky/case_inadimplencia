@@ -8,7 +8,8 @@ Solução desenvolvida para o case técnico de Cientista de Dados Júnior, com f
 
 Construir um modelo de classificação binária para prever o risco de atraso igual ou superior a 5 dias.
 
-* **Variável Alvo (Target):** * 1 (Inadimplente): se DIAS_ATRASO >= 5
+* **Variável Alvo (Target):**
+    * 1 (Inadimplente): se DIAS_ATRASO >= 5
     * 0 (Adimplente): caso contrário
 * **Entregável:** Arquivo .csv contendo as probabilidades previstas para o conjunto de teste.
 
